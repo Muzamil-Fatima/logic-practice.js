@@ -1,9 +1,7 @@
 // Group Orders by Status
 console.log("Problem: Group Orders by Status");
 function GroupOrderStatus(orders) {
-    orders.forEach(element => {
-        element.food = element.food.lo
-    });
+   
 }
 console.log(
   GroupOrderStatus(
