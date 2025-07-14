@@ -1,16 +1,30 @@
-// Group Orders by Status
-console.log("Problem: Group Orders by Status");
-function GroupOrderStatus(orders) {
-   
+// Problem Find the Most Frequent Category
+console.log("Problem Find the Most Frequent Category")
+function mostFrequent(array) {
+  const result = {}
+  let maxCount = 0
+  let mostRepeatedElement = ""
+  array.forEach(product => {
+    const category = product.category;
+    if (!result[category]) {
+
+      result[category] = 1
+    } else {
+      result[category]++
+    }
+    if (result[category] > maxCount) {
+      maxCount = result[category]
+      mostRepeatedElement = category
+    }
+  });
+  return `${mostRepeatedElement} (${maxCount} items)`
 }
-console.log(
-  GroupOrderStatus(
-    (orders = [
-      { id: 1, food: "Burger", status: "delivered" },
-      { id: 2, food: "Pizza", status: "pending" },
-      { id: 3, food: "Fries", status: "delivered" },
-      { id: 4, food: "Pasta", status: "cancelled" },
-      { id: 5, food: "Sandwich", status: "pending" },
-    ])
-  )
-);
+console.log(mostFrequent([
+  { name: "Laptop", category: "Electronics" },
+  { name: "Shoes", category: "Fashion" },
+  { name: "Mobile", category: "Electronics" },
+  { name: "Jeans", category: "Fashion" },
+  { name: "Washing Machine", category: "Home" },
+  { name: "Fridge", category: "Electronics" }
+]
+))

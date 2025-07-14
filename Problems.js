@@ -219,17 +219,17 @@ function nonRepeatedArray(array) {
 console.log(nonRepeatedArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 // Problem: Group Words by First Letter
 console.log("Problem: Group Words by First Letter")
-function GroupingWordByFirstLetter(arr){
-    let result = {};
-    arr.forEach(element => {
-        element= element.toLowerCase();
-        const firstLetter = element.charAt(0);
-        if(!result[firstLetter]) {
-            result[firstLetter] = [];
-        }
-        result[firstLetter].push(element);
-    });
-    return result;
+function GroupingWordByFirstLetter(arr) {
+  let result = {};
+  arr.forEach(element => {
+    element = element.toLowerCase();
+    const firstLetter = element.charAt(0);
+    if (!result[firstLetter]) {
+      result[firstLetter] = [];
+    }
+    result[firstLetter].push(element);
+  });
+  return result;
 }
 console.log(GroupingWordByFirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "avocado", "Muzamil"]));
 //  Group by First & Last Letter (like: m_l, a_e)
@@ -251,3 +251,110 @@ function FirstLastLetter(arr) {
 console.log(
   FirstLastLetter(["apple", "axe", "angle", "alien", "alone", "ant", "Muzamil"])
 );
+// Group Orders by Status
+console.log("Problem: Group Orders by Status");
+function GroupOrderStatus(orders) {
+  const delivered = [];
+  const pending = [];
+  const cancelled = [];
+  orders.forEach(element => {
+    if (element.status == "delivered") {
+      delivered.push(element)
+    }
+    else if (element.status == "pending") {
+      pending.push(element)
+    }
+    else if (element.status == "cancelled") {
+      cancelled.push(element)
+    }
+    else {
+      console.log("status not found")
+    }
+  });
+  return { delivered, cancelled, pending }
+}
+console.log(
+  GroupOrderStatus(
+    (orders = [
+      { id: 1, food: "Burger", status: "delivered" },
+      { id: 2, food: "Pizza", status: "pending" },
+      { id: 3, food: "Fries", status: "delivered" },
+      { id: 4, food: "Pasta", status: "cancelled" },
+      { id: 5, food: "Sandwich", status: "pending" },
+    ])
+  )
+);
+// Problem Group Numbers by Parity
+console.log("Problem => Group Numbers by Parity")
+function ChcekEvenOdd(arr) {
+  const odd = []
+  const even = []
+  arr.forEach(element => {
+    if (element % 2 == 0) {
+      even.push(element)
+    }
+    else {
+      odd.push(element)
+    }
+  });
+  return { even, odd }
+}
+console.log(ChcekEvenOdd([1, 1, 2, 3, 4, 5, 6, 7, 8, 97, 54, 32, 25, 67]))
+// Problem Group Words by First Letter
+function FirstLetter(arr) {
+  const result = {}
+  arr.forEach(word => {
+    const first = word.toLowerCase().charAt(0)
+    if (!result[first]){
+      result[first] = []
+    }
+  result[first].push(word)
+  });
+  return result
+}
+console.log(FirstLetter(["Muzamil","Meerab","apple", "banana", "cherry", "apricot", "blueberry", "avocado"]
+))
+// Problem Group Products by Category
+function GroupProducts(arr) {
+  const result = {}
+  arr.forEach(product => {
+    const category = product.category
+    const name = product.name
+    if (!result[category]) {
+      result[category] = []
+    }
+    result[category].push(name)
+  });
+  return result;
+}
+console.log(GroupProducts([
+  { name: "Laptop", category: "Electronics" },
+  { name: "Shoes", category: "Fashion" },
+  { name: "Mobile", category: "Electronics" },
+  { name: "Jeans", category: "Fashion" },
+  { name: "Washing Machine", category: "Home" }
+]
+))
+// Next Problem: Count Products per Category
+console.log("Next Problem: Count Products per Category")
+function CountProducts(array){
+  const result ={}
+  array.forEach(product => {
+    const category = product.category
+    if(!result[category]){
+   result[category] = 1
+    }
+    else{
+      result[category]++
+    }
+  });
+return result
+}
+console.log(CountProducts([
+  { name: "Laptop", category: "Electronics" },
+  { name: "Shoes", category: "Fashion" },
+  { name: "Mobile", category: "Electronics" },
+  { name: "Jeans", category: "Fashion" },
+  { name: "Washing Machine", category: "Home" }
+]
+))
