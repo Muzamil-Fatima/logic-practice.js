@@ -305,14 +305,14 @@ function FirstLetter(arr) {
   const result = {}
   arr.forEach(word => {
     const first = word.toLowerCase().charAt(0)
-    if (!result[first]){
+    if (!result[first]) {
       result[first] = []
     }
-  result[first].push(word)
+    result[first].push(word)
   });
   return result
 }
-console.log(FirstLetter(["Muzamil","Meerab","apple", "banana", "cherry", "apricot", "blueberry", "avocado"]
+console.log(FirstLetter(["Muzamil", "Meerab", "apple", "banana", "cherry", "apricot", "blueberry", "avocado"]
 ))
 // Problem Group Products by Category
 function GroupProducts(arr) {
@@ -337,18 +337,18 @@ console.log(GroupProducts([
 ))
 // Next Problem: Count Products per Category
 console.log("Next Problem: Count Products per Category")
-function CountProducts(array){
-  const result ={}
+function CountProducts(array) {
+  const result = {}
   array.forEach(product => {
     const category = product.category
-    if(!result[category]){
-   result[category] = 1
+    if (!result[category]) {
+      result[category] = 1
     }
-    else{
+    else {
       result[category]++
     }
   });
-return result
+  return result
 }
 console.log(CountProducts([
   { name: "Laptop", category: "Electronics" },
@@ -358,3 +358,65 @@ console.log(CountProducts([
   { name: "Washing Machine", category: "Home" }
 ]
 ))
+// Problem Find the Most Frequent Category
+console.log("Problem Find the Most Frequent Category")
+function mostFrequent(array) {
+  const result = {}
+  let maxCount = 0
+  let mostRepeatedElement = ""
+  array.forEach(product => {
+    const category = product.category;
+    if (!result[category]) {
+
+      result[category] = 1
+    } else {
+      result[category]++
+    }
+    if (result[category] > maxCount) {
+      maxCount = result[category]
+      mostRepeatedElement = category
+    }
+  });
+  return `${mostRepeatedElement} (${maxCount} items)`
+}
+console.log(mostFrequent([
+  { name: "Laptop", category: "Electronics" },
+  { name: "Shoes", category: "Fashion" },
+  { name: "Mobile", category: "Electronics" },
+  { name: "Jeans", category: "Fashion" },
+  { name: "Washing Machine", category: "Home" },
+  { name: "Fridge", category: "Electronics" }
+]
+))
+// Problem: Group Words by First Letter
+console.log("Problem: Group Words by First Letter")
+function FirstLetter(array) {
+  const result = {}
+  array.forEach((word) => {
+    const element = word.charAt(0).toLowerCase()
+    if (!result[element]) {
+      result[element] = []
+    }
+    result[element].push(word)
+  })
+  return result;
+}
+console.log(FirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "carrot"]
+))
+// Problem: Count Character Frequency in a String
+console.log("Problem: Count Character Frequency in a String")
+function CharacterFrequency(str) {
+  word = str.toLowerCase().split("");
+  const result = {}
+  word.forEach(char => {
+    if (char === " ") return;
+    if (!result[char]) {
+      result[char] = 1
+    }
+    else {
+      result[char]++
+    }
+  });
+  return result;
+}
+console.log(CharacterFrequency(" Muzamil Fatima yes you of Course You HHAHAHAAHAHHA "))
