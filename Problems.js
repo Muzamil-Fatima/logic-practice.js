@@ -420,3 +420,65 @@ function CharacterFrequency(str) {
   return result;
 }
 console.log(CharacterFrequency(" Muzamil Fatima yes you of Course You HHAHAHAAHAHHA "))
+// Problem: Find the Most Frequent Character
+console.log("Problem: Find the Most Frequent Character")
+function mostFrequent(str) {
+    const result = {}
+    const word = str.split("")
+    word.forEach((char) => {
+        if (char === " ") return;
+        if (!result[char]) {
+            result[char] = 1
+        }
+        else {
+            result[char]++
+        }
+    });
+    let maxChar = "";
+    let maxCount = 0;
+    for (let chars in result) {
+      if(result[chars] > maxCount){
+          maxCount = result[chars]
+          maxChar = chars;
+      }  
+    }
+    return {maxChar, maxCount , Frequency:result};
+}
+console.log(mostFrequent("hello worldMMMMMMMMMMM"))
+// Problem: Find the First Non-Repeated Character
+console.log("Problem: Find the First Non-Repeated Character")
+function FirstNonRepeat(str) {
+    const result = {}
+    const word = str.toLowerCase().split("")
+    word.forEach(char => {
+        if(char == " ") return
+        if (!result[char]) {
+            result[char] = 1
+        }
+        else {
+            result[char]++
+        }
+    });
+    for (const chars in result) {
+        if (result[chars]  === 1) {
+           return chars
+        }
+    }
+    return result
+}
+console.log(FirstNonRepeat("Muzamil"))
+// Problem: Group Words by Their First Letter
+console.log("Problem: Group Words by Their First Letter")
+function GroupFirstLetter(array){
+    const result = {}
+    array.forEach(word => {
+        letter = word.charAt(0).toLowerCase()
+        if(!result[letter]){
+          result[letter] = []  
+        }
+        result[letter].push(word)
+    });
+return result;
+}
+console.log(GroupFirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "avocado"]
+))
