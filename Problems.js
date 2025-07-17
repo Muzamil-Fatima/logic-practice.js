@@ -482,3 +482,5 @@ return result;
 }
 console.log(GroupFirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "avocado"]
 ))
+
+
