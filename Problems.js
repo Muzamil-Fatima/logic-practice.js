@@ -482,5 +482,16 @@ return result;
 }
 console.log(GroupFirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "avocado"]
 ))
-
-
+//  Problem: Find the Longest Word in a Sentence
+console.log("Problem: Find the Longest Word in a Sentence")
+function LogestWord(str) {
+    let result = "";
+    const words = str.split(" ")
+    words.forEach(char => {
+        if (char.length > result.length) {
+            result = char
+        }
+    });
+    return result
+}
+console.log(LogestWord("JavaScript MuzamilFatima is amazing and powerful!"))
