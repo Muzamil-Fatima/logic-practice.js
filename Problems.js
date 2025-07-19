@@ -423,75 +423,119 @@ console.log(CharacterFrequency(" Muzamil Fatima yes you of Course You HHAHAHAAHA
 // Problem: Find the Most Frequent Character
 console.log("Problem: Find the Most Frequent Character")
 function mostFrequent(str) {
-    const result = {}
-    const word = str.split("")
-    word.forEach((char) => {
-        if (char === " ") return;
-        if (!result[char]) {
-            result[char] = 1
-        }
-        else {
-            result[char]++
-        }
-    });
-    let maxChar = "";
-    let maxCount = 0;
-    for (let chars in result) {
-      if(result[chars] > maxCount){
-          maxCount = result[chars]
-          maxChar = chars;
-      }  
+  const result = {}
+  const word = str.split("")
+  word.forEach((char) => {
+    if (char === " ") return;
+    if (!result[char]) {
+      result[char] = 1
     }
-    return {maxChar, maxCount , Frequency:result};
+    else {
+      result[char]++
+    }
+  });
+  let maxChar = "";
+  let maxCount = 0;
+  for (let chars in result) {
+    if (result[chars] > maxCount) {
+      maxCount = result[chars]
+      maxChar = chars;
+    }
+  }
+  return { maxChar, maxCount, Frequency: result };
 }
 console.log(mostFrequent("hello worldMMMMMMMMMMM"))
 // Problem: Find the First Non-Repeated Character
 console.log("Problem: Find the First Non-Repeated Character")
 function FirstNonRepeat(str) {
-    const result = {}
-    const word = str.toLowerCase().split("")
-    word.forEach(char => {
-        if(char == " ") return
-        if (!result[char]) {
-            result[char] = 1
-        }
-        else {
-            result[char]++
-        }
-    });
-    for (const chars in result) {
-        if (result[chars]  === 1) {
-           return chars
-        }
+  const result = {}
+  const word = str.toLowerCase().split("")
+  word.forEach(char => {
+    if (char == " ") return
+    if (!result[char]) {
+      result[char] = 1
     }
-    return result
+    else {
+      result[char]++
+    }
+  });
+  for (const chars in result) {
+    if (result[chars] === 1) {
+      return chars
+    }
+  }
+  return result
 }
 console.log(FirstNonRepeat("Muzamil"))
 // Problem: Group Words by Their First Letter
 console.log("Problem: Group Words by Their First Letter")
-function GroupFirstLetter(array){
-    const result = {}
-    array.forEach(word => {
-        letter = word.charAt(0).toLowerCase()
-        if(!result[letter]){
-          result[letter] = []  
-        }
-        result[letter].push(word)
-    });
-return result;
+function GroupFirstLetter(array) {
+  const result = {}
+  array.forEach(word => {
+    letter = word.charAt(0).toLowerCase()
+    if (!result[letter]) {
+      result[letter] = []
+    }
+    result[letter].push(word)
+  });
+  return result;
 }
 console.log(GroupFirstLetter(["apple", "banana", "apricot", "blueberry", "cherry", "avocado"]
 ))
 //  Problem: Find the Longest Word in a Sentence
 console.log("Problem: Find the Longest Word in a Sentence")
 function LogestWord(str) {
-    let result = "";
-    const words = str.split(" ")
-    words.forEach(char => {
-        if (char.length > result.length) {
-            result = char
-        }
-    });
-    return result
+  let result = "";
+  const words = str.split(" ")
+  words.forEach(char => {
+    if (char.length > result.length) {
+      result = char
+    }
+  });
+  return result
 }
 console.log(LogestWord("JavaScript MuzamilFatima is amazing and powerful!"))
+// Problem: Count Vowels in a String
+console.log("Problem: Count Vowels in a String")
+function countVowerls(str) {
+  let count = 0;
+  const vowels = "aeiouAEIOU";
+  const total = str.split("")
+  total.forEach(word => {
+    if (vowels.includes(word)) {
+      count++
+    }
+  });
+  return count;
+}
+console.log(countVowerls("Muzamil Fatima"))
+//  Problem: Find the Missing Number
+console.log(" Problem: Find the Missing Number")
+function MissNumber(array) {
+  let missing = [];
+  let maxNum = Math.max(...array);
+
+  for (let i = 1; i <= maxNum; i++) {
+    if (!array.includes(i)) {
+      missing.push(i)
+    }
+  }
+  return missing
+}
+console.log(MissNumber([1, 2, 5, 6, 7, 8]))
+// Problem: Count Occurrences of Each Number
+console.log("Problem: Count Occurrences of Each Number")
+function checkOccurrence(array) {
+  let result = {}
+  let count = 0
+  array.forEach(num => {
+    if (!result[num]) {
+      result[num] = 1
+    }
+    else {
+      result[num]++
+    }
+  });
+  return result
+}
+console.log(checkOccurrence([1, 2, 2, 3, 3, 3, 5, 5, 6, 7, 7, 7, 6, 6, 54, 3]))
