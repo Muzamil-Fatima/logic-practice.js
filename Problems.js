@@ -539,3 +539,58 @@ function checkOccurrence(array) {
   return result
 }
 console.log(checkOccurrence([1, 2, 2, 3, 3, 3, 5, 5, 6, 7, 7, 7, 6, 6, 54, 3]))
+// Problem: Count Occurrences of Each Character in a String
+function CharOccurrences(str) {
+    let result = {}
+    let letter = str.split("")
+    letter.forEach(letters => {
+        if (letters !== " ") {
+            if (!result[letters]) {
+                result[letters] = 1
+            } else {
+                result[letters]++
+            }
+        }
+    });
+
+    return result
+}
+console.log(CharOccurrences("Muzamil Fatima"))
+// Problem: Find the Longest Word in a Sentence
+console.log("Problem: Find the Longest Word in a Sentence")
+function LongestWord(str) {
+    let logest = ""
+    let words = str.split(" ")
+    words.forEach((word) => {
+        if(word.length > logest.length){
+            logest = word;
+        }
+    })
+    return logest;
+}
+console.log(LongestWord("Muzamil Fatima Meerab Maryam Chattha"))
+// Problem: Count Vowels in a String
+console.log("Problem: Count Vowels in a String")
+function VowelsInString(str) {
+    let total = {}
+    let result = []
+    let count = 0
+    const vowels = "aeiouAEIOU";
+    for (let char of str) {
+        if (vowels.includes(char)) {
+            result.push(char)
+            if (!total[char]) {
+                total[char] = 1
+            }
+            else {
+                total[char]++
+            }
+        }
+    }
+    return {
+        total: total,
+        count: result.length,
+        vowels: result
+    }
+}
+console.log(VowelsInString("Muzamil Fatima"))
