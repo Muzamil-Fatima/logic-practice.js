@@ -594,3 +594,41 @@ function VowelsInString(str) {
     }
 }
 console.log(VowelsInString("Muzamil Fatima"))
+
+// Problem: Count Vowels in a String
+console.log("Problem: Count Vowels in a String")
+function VowelsInString(str) {
+    let total = {}
+    let result = []
+    let count = 0
+    const vowels = "aeiouAEIOU";
+    for (let char of str) {
+        if (vowels.includes(char)) {
+            result.push(char)
+            if (!total[char]) {
+                total[char] = 1
+            }
+            else {
+                total[char]++
+            }
+        }
+    }
+    return {
+        total: total,
+        count: result.length,
+        vowels: result
+    }
+}
+console.log(VowelsInString("Muzamil Fatima"))
+// find Logenest Word 
+function LogestWord(str) {
+    let longest = " "
+    let word = str.split(" ")
+    for (let words of word) {
+        if (words.length > longest.length) {
+            longest = words;
+        }
+    }
+    return longest;
+}
+console.log(LogestWord("Hy Muzmail this is you"))

@@ -10,29 +10,16 @@
 // console.log(StrAnagrams("triangle", "integral"))
 // console.log(StrAnagrams("hello", "world"))
 
-
-// Problem: Count Vowels in a String
-console.log("Problem: Count Vowels in a String")
-function VowelsInString(str) {
-    let total = {}
-    let result = []
-    let count = 0
-    const vowels = "aeiouAEIOU";
-    for (let char of str) {
-        if (vowels.includes(char)) {
-            result.push(char)
-            if (!total[char]) {
-                total[char] = 1
-            }
-            else {
-                total[char]++
-            }
+// Problem  Find the Shortest Word
+console.log("Problem : Find the Shortest Word")
+function ShortestWord(str) {
+    let word = str.split(" ")
+    let ShortestWord = word[0]
+    for (const letter of word) {
+        if (letter.length < ShortestWord.length) {
+             ShortestWord = letter
         }
     }
-    return {
-        total: total,
-        count: result.length,
-        vowels: result
-    }
+    return ShortestWord
 }
-console.log(VowelsInString("Muzamil Fatima"))
+console.log(ShortestWord("My name is muzmail I am Good in programming"))
