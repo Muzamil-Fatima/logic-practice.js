@@ -632,3 +632,39 @@ function LogestWord(str) {
     return longest;
 }
 console.log(LogestWord("Hy Muzmail this is you"))
+// Problem  Find the Shortest Word
+console.log("Problem : Find the Shortest Word")
+function ShortestWord(str) {
+    let word = str.split(" ")
+    let ShortestWord = word[0]
+    for (const letter of word) {
+        if (letter.length < ShortestWord.length) {
+             ShortestWord = letter
+        }
+    }
+    return ShortestWord
+}
+console.log(ShortestWord("My name is muzmail I am Good in programming"))
+// Problem: Find the Most Frequent total frequent count
+console.log("Problem: Find the Most Frequent Number")
+function MostFrequent(array) {
+    let arrange = array.toSorted((a, b) => a - b);
+    let result = {}
+    let count = 0
+    arrange.forEach(element => {
+        if (!result[element]) {
+            result[element] = 1;
+        }
+        else {
+            result[element]++
+        }
+        if (result[element] > count) {
+            count = result[element]
+        }
+    });
+    return {
+        result,
+        count,
+    }
+}
+console.log(MostFrequent([2, 2, 2, 2, 3, 3, 4, 4, 5, 5, 6, 67, 788, 899, 9, 9, 9]))
