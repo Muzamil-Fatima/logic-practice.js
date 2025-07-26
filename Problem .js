@@ -1,20 +1,6 @@
-// Problem: Find the Second Largest Number in an Array
-function secondLargest(array) {
-    let max = -Infinity;
-    let secondMax = -Infinity;
+// Problem: Remove Duplicates from an Array
+console.log("Problem: Remove Duplicates from an Array")
+function RemoveDuplicated(){
 
-    array.forEach(num => {
-        if (num > max) {
-            secondMax = max;
-            max = num;
-        } else if (num > secondMax && num < max) {
-            secondMax = num;
-        }
-    });
-
-    return secondMax === -Infinity ? null : secondMax;
 }
-
-console.log(secondLargest([10, 5, 20, 20, 4])); 
-console.log(secondLargest([3, 3, 3]));         
-console.log(secondLargest([1, 2, 3, 4, 5]));   
+console.log(RemoveDuplicated[1,22,3,33,4,4,44,55,5,66,7,7,88,887,6,54,54])
