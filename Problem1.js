@@ -69,3 +69,15 @@ function CountVowels(str) {
     return count
 }
 console.log(CountVowels("Muzmail Fatima"))
+// Problem: Remove Duplicates from an Array
+console.log("Problem: Remove Duplicates from an Array")
+function RemoveDuplicated(array) {
+    let result = []
+    array.forEach(element => {
+        if (!result.includes(element)) {
+            result.push(element)
+        }
+    });
+    return result
+}
+console.log(RemoveDuplicated([1, 22, 3, 33, 4, 4, 44, 55, 5, 66, 7, 7, 88, 887, 6, 54, 54]))
