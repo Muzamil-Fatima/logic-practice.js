@@ -1,7 +1,22 @@
-// Problem: Find the Second Largest Number in an Array
-console.log("Problem: Find the Second Largest Number in an Array")
+//  Problem: Find the First Non-Repeating Character
+function firstUniqueChar(str) {
+    let result = {}
+    const word = str.split("")
+    word.forEach(element => {
+        if (!result[element]) {
+            result[element] = 1
+        }
+        else {
+            result[element]++
+        }
 
-function SecondLargestNumber(){
+    });
 
+    for (const element of word) {
+        if (result[element] === 1) {
+            return element
+        }
+    }
+    return "None"
 }
-console.log(SecondLargestNumber([1,2,3,3,3,3,344,4,4,5,5,55,6,67,7,8,86]))
+console.log(firstUniqueChar("MuzmailFatimaMughal"))
